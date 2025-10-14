@@ -9,14 +9,6 @@ aiRouter.post('/generate-article', auth, generateArticle)
 aiRouter.post('/generate-blog-title', auth, generateBlogTitle)
 aiRouter.post('/generate-image', auth, generateImage)
 
-// Add this to your aiRoutes.js for testing
-aiRouter.post('/test-upload', upload.single('image'), (req, res) => {
-    console.log('File received:', req.file);
-    res.json({ 
-        success: true, 
-        file: req.file ? 'File received' : 'No file received' 
-    });
-});
 aiRouter.post('/remove-image-background', upload.single('image'), auth, removeImageBackground)
 
 aiRouter.post('/remove-image-object', upload.single('image'), auth, removeImageObject)
